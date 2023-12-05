@@ -132,3 +132,5 @@ dmypy.json
 models/*
 data/*
 runs/*
+nuscenes/
+pretrained/
