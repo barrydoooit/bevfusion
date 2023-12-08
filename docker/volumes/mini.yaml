@@ -1,0 +1,5 @@
+version: '3'
+services:
+  bevfusion_val:
+    volumes:
+      - /data/datasets/3d_obj_det/Nuscenes_mini:/bevfusion/data/nuscenes

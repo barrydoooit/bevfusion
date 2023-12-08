@@ -1,0 +1,17 @@
+version: '3'
+services:
+  bevfusion_val:
+    container_name: bevfusion_val
+    image: ec37b6b01192
+    ipc: host
+    command: /bin/bash
+    stdin_open: true 
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    ports:
+      - "25569:22"

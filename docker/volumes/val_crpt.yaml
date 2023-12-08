@@ -1,0 +1,18 @@
+version: '3'
+services:
+  bevfusion_val:
+    volumes:
+      - ${NUSCENE_ROOT}/maps:/bevfusion/data/nuscenes/maps
+      - ${NUSCENE_ROOT}/nuscenes_gt_database:/bevfusion/data/nuscenes/nuscenes_gt_database
+      - ${NUSCENE_ROOT}/samples/CAM_BACK:/bevfusion/data/nuscenes/samples/CAM_BACK
+      - ${NUSCENE_ROOT}/samples/CAM_BACK_LEFT:/bevfusion/data/nuscenes/samples/CAM_BACK_LEFT
+      - ${NUSCENE_ROOT}/samples/CAM_BACK_RIGHT:/bevfusion/data/nuscenes/samples/CAM_BACK_RIGHT
+      - ${NUSCENE_ROOT}/samples/CAM_FRONT:/bevfusion/data/nuscenes/samples/CAM_FRONT
+      - ${NUSCENE_ROOT}/samples/CAM_FRONT_LEFT:/bevfusion/data/nuscenes/samples/CAM_FRONT_LEFT
+      - ${NUSCENE_ROOT}/samples/CAM_FRONT_RIGHT:/bevfusion/data/nuscenes/samples/CAM_FRONT_RIGHT
+      - ${NUSCENE_ROOT}/v1.0-trainval:/bevfusion/data/nuscenes/v1.0-trainval
+      - ${NUSCENE_ROOT}/nuscenes_dbinfos_train.pkl:/bevfusion/data/nuscenes/nuscenes_dbinfos_train.pkl
+      - ${NUSCENE_ROOT}/nuscenes_infos_val.pkl:/bevfusion/data/nuscenes/nuscenes_infos_val.pkl
+
+      - ${NUSCENE_C_ROOT}:/bevfusion/data/nuScenes-C
+      - ${NUSCENE_ROOT}/samples/LIDAR_TOP:/bevfusion/data/nuScenes-C/clear/samples/LIDAR_TOP
