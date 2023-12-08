@@ -14,5 +14,13 @@ services:
       - ${NUSCENE_ROOT}/nuscenes_dbinfos_train.pkl:/bevfusion/data/nuscenes/nuscenes_dbinfos_train.pkl
       - ${NUSCENE_ROOT}/nuscenes_infos_val.pkl:/bevfusion/data/nuscenes/nuscenes_infos_val.pkl
 
+      - ${NUSCENE_ROOT}/samples/RADAR_BACK_LEFT:/bevfusion/data/nuscenes/samples/RADAR_BACK_LEFT
+      - ${NUSCENE_ROOT}/samples/RADAR_BACK_RIGHT:/bevfusion/data/nuscenes/samples/RADAR_BACK_RIGHT
+      - ${NUSCENE_ROOT}/samples/RADAR_FRONT:/bevfusion/data/nuscenes/samples/RADAR_FRONT
+      - ${NUSCENE_ROOT}/samples/RADAR_FRONT_LEFT:/bevfusion/data/nuscenes/samples/RADAR_FRONT_LEFT
+      - ${NUSCENE_ROOT}/samples/RADAR_FRONT_RIGHT:/bevfusion/data/nuscenes/samples/RADAR_FRONT_RIGHT
+
+      - ${NUSCENE_ROOT}/sweeps:/bevfusion/data/nuscenes/sweeps
+      
       - ${NUSCENE_C_ROOT}:/bevfusion/data/nuScenes-C
       - ${NUSCENE_ROOT}/samples/LIDAR_TOP:/bevfusion/data/nuScenes-C/clear/samples/LIDAR_TOP
