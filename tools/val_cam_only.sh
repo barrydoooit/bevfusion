@@ -1,0 +1,1 @@
+torchpack dist-run -np 1 python tools/test.py configs/nuscenes/det/centerhead/lssfpn/camera/256x704/swint/default.yaml pretrained/camera-only-det.pth --eval bbox

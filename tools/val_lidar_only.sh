@@ -1,0 +1,1 @@
+torchpack dist-run -np 1 python tools/test.py configs/nuscenes/det/transfusion/secfpn/lidar/voxelnet_0p075.yaml pretrained/lidar-only-det.pth --eval bbox

@@ -15,6 +15,14 @@ create_link() {
     echo "Symbolic link created at $target_path"
 }
 
+# Function to list the contents of the target directory
+list_contents() {
+    local target_dir=$1
+    echo "Status of $target_dir:"
+    ls -la "$target_dir"
+    echo ""
+}
+
 # Base paths
 nuscenes_cc_root="/bevfusion/data/nuScenes-CC"
 nuscenes_cl_root="/bevfusion/data/nuScenes-CL"
@@ -56,3 +64,5 @@ if [ ! -z "$lidar_type" ]; then
     target_lidar_path="${nuscenes_target_root}/LIDAR_TOP"
     create_link "$lidar_path" "$target_lidar_path"
 fi
+
+list_contents "$nuscenes_target_root"
