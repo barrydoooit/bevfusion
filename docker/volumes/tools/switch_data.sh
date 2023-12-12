@@ -34,7 +34,7 @@ declare -a cameras=("CAM_BACK" "CAM_BACK_LEFT" "CAM_BACK_RIGHT" "CAM_FRONT" "CAM
 # Parse arguments
 while [[ "$#" -gt 0 ]]; do
     case $1 in
-        --cam) cam_type="$2"; shift ;;
+        --cam) cam_type="$2"; cam_severity="$3"; shift; shift ;;
         --lidar) lidar_type="$2"; lidar_severity="$3"; shift; shift ;;
         *) echo "Unknown parameter: $1"; exit 1 ;;
     esac
