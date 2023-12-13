@@ -24,9 +24,9 @@ list_contents() {
 }
 
 # Base paths
-nuscenes_cc_root="/CMT/data/nuScenes-CC"
-nuscenes_cl_root="/CMT/data/nuScenes-CL"
-nuscenes_target_root="/CMT/data/nuscenes/samples"
+nuscenes_cc_root="/bevfusion/data/nuScenes-CC"
+nuscenes_cl_root="/bevfusion/data/nuScenes-CL"
+nuscenes_target_root="/bevfusion/data/nuscenes/samples"
 
 # Cameras
 declare -a cameras=("CAM_BACK" "CAM_BACK_LEFT" "CAM_BACK_RIGHT" "CAM_FRONT" "CAM_FRONT_LEFT" "CAM_FRONT_RIGHT")
