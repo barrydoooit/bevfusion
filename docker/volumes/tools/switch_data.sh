@@ -24,9 +24,9 @@ list_contents() {
 }
 
 # Base paths
-nuscenes_cc_root="/bevfusion/data/nuScenes-CC"
-nuscenes_cl_root="/bevfusion/data/nuScenes-CL"
-nuscenes_target_root="/bevfusion/data/nuscenes/samples"
+nuscenes_cc_root="/CMT/data/nuScenes-CC"
+nuscenes_cl_root="/CMT/data/nuScenes-CL"
+nuscenes_target_root="/CMT/data/nuscenes/samples"
 
 # Cameras
 declare -a cameras=("CAM_BACK" "CAM_BACK_LEFT" "CAM_BACK_RIGHT" "CAM_FRONT" "CAM_FRONT_LEFT" "CAM_FRONT_RIGHT")
@@ -34,8 +34,22 @@ declare -a cameras=("CAM_BACK" "CAM_BACK_LEFT" "CAM_BACK_RIGHT" "CAM_FRONT" "CAM
 # Parse arguments
 while [[ "$#" -gt 0 ]]; do
     case $1 in
-        --cam) cam_type="$2"; cam_severity="$3"; shift; shift ;;
-        --lidar) lidar_type="$2"; lidar_severity="$3"; shift; shift ;;
+        --cam) 
+            cam_type="$2"; 
+            shift; 
+            if [ "$2" != "--lidar" ]; then
+                cam_severity="$2"; 
+                shift; 
+            fi
+        ;;
+        --lidar) 
+            lidar_type="$2"; 
+            shift; 
+            if [ "$2" ]; then
+                lidar_severity="$2"; 
+                shift; 
+            fi
+        ;;
         *) echo "Unknown parameter: $1"; exit 1 ;;
     esac
     shift
@@ -46,6 +60,8 @@ if [ ! -z "$cam_type" ]; then
     for cam in "${cameras[@]}"; do
         if [ "$cam_type" = "clear" ]; then
             cam_path="${nuscenes_cc_root}/clear/samples/${cam}"
+        elif [ "$cam_type" = "pure_noise" ]; then
+            cam_path="${nuscenes_cc_root}/pure_noise/samples/${cam}"
         else
             cam_path="${nuscenes_cc_root}/${cam_type}/${cam_severity}/samples/${cam}"
         fi
